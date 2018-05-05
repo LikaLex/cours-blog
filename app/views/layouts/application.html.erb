@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'site.ico' %>
 </head>
 <body>
 <!-- Render navigation bar -->
@@ -14,6 +15,6 @@
 <div class="container-fluid">
   <%= yield %>
 </div>
-
+<%= audio_tag "bruno_mars_grenade_original_(NaitiMP3.ru).mp3", id: "sound", class: "audio-to-play", autoplay: false %>
 </body>
 </html>

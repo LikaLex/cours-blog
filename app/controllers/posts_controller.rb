@@ -4,7 +4,13 @@ class PostsController < ApplicationController
 
   # Index action to render all posts
   def index
-    @posts = Post.all
+    #@posts = Post.all
+    @posts =
+       if params[:query].present?
+         Post.search(params[:query])
+       else
+         Post.all
+       end
   end
 
   # New action for creating post
