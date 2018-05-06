@@ -2,5 +2,8 @@
   <h2 class="text-center"><%= @post.title %></h2>
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
   <div><%= raw @post.body %></div>
+  <h3>Comments (<%= @post.comments.size %>)</h3>
+  <%= render partial: 'comments/form' %>
+  <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
+
 </div>
->

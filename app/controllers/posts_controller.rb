@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :delete]
   before_action :authenticate_admin!, except: [:index, :show]
 
+
   # Index action to render all posts
   def index
     #@posts = Post.all
@@ -47,6 +48,9 @@ class PostsController < ApplicationController
 
   # The show action renders the individual post after retrieving the the id
   def show
+    #commontator_thread_show(@post)
+    @comment = Comment.new
+    @comment.post_id = @post.id
   end
 
   # The destroy action removes the post permanently from the database
