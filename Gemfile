@@ -13,6 +13,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pg_search'
 gem 'commontator', '~> 5.1.0'
+gem 'bootstrap-datepicker-rails'
+gem "simple_calendar", "~> 2.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record

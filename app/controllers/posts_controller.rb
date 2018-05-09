@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
 
+
   # Index action to render all posts
   def index
     #@posts = Post.all
@@ -66,10 +67,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :funding_deadline)
   end
 
   def find_post
     @post = Post.find(params[:id])
   end
+
+
 end

@@ -9,4 +9,6 @@ class Post < ActiveRecord::Base
   include PgSearch
   multisearchable :against => [:title, :body]
 
+
+
 end

@@ -1,9 +1,15 @@
 <div class="col-sm-11 col-xs-12 blog-content">
   <h2 class="text-center"><%= @post.title %></h2>
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
+
   <div><%= raw @post.body %></div>
+  <li> <%= link_to "Edit post", edit_post_path(@post) %></li>
+  <li><%= link_to "Back to list", root_path %></li>
+  <%= audio_tag "eminem-not-afraid.mp3", id: "sound", class: "audio-to-play", autoplay: false%>
+
   <h3>Comments (<%= @post.comments.size %>)</h3>
   <%= render partial: 'comments/form' %>
   <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
+
 
 </div>
