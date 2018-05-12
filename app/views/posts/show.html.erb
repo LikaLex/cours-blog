@@ -3,6 +3,7 @@
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
 
   <div><%= raw @post.body %></div>
+
   <li> <%= link_to "Edit post", edit_post_path(@post) %></li>
   <li><%= link_to "Back to list", root_path %></li>
   <%= audio_tag "eminem-not-afraid.mp3", id: "sound", class: "audio-to-play", autoplay: false%>
