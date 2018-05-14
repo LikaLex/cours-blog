@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  searchkick
   acts_as_commontable
   has_many :comments
   #This validates presence of title, and makes sure that the length is not more than 140 words

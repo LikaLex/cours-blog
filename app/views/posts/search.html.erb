@@ -1,0 +1,9 @@
+<div class="row">
+  <% @posts.each do |post| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <%= link_to "Here you are. Click to open post", post %>
+        </div>
+      </div>
+  <% end %>
+</div>

@@ -2,9 +2,12 @@
   devise_for :admins
   mount Ckeditor::Engine => '/ckeditor'
     root to: "posts#index"
-    resources :posts
+
   mount Commontator::Engine => '/commontator'
   resources :posts do
+    collection do
+      get 'search'
+    end
     resources :comments
   end
   end

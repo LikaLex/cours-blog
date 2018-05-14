@@ -3,6 +3,14 @@ class PostsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
 
+  def search
+    if params[:search].present?
+      @posts = Post.search(params[:search])
+    else
+      @posts = Post.all
+    end
+  end
+
 
   # Index action to render all posts
   def index
